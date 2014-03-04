@@ -36,25 +36,25 @@ Add the libProtoBuf.framework to your project. The library will work for iOS Sim
 
 ## Troubleshooting
 
-Issue installing Protobufs 2.5.0 in Mavericks. Comment out the iosfwd
-  
-  #ifdef __DECCXX
-  // HP C++'s iosfwd doesn't work.
-  #include <iostream>
-  #else
-  #include <sstream>
-  //#include <iosfwd> // comment out this for the sstream
-  #endif
+Issue installing Protobufs 2.5.0 in Mavericks. Comment out the iosfwd.  
+
+    #ifdef __DECCXX
+    // HP C++'s iosfwd doesn't work.
+    #include <iostream>
+    #else
+    #include <sstream>
+    //#include <iosfwd> // comment out this for the sstream
+    #endif
 
 ## File locations
 
-  /usr/local/bin 
-    protoc (file or symlink)
-    protoc-gen-objc (file or symlink)
-  /usr/local/include
-    needs a symlink called "protobuf" to /usr/local/Cellar/protobuf/2.5.0/include
-  /usr/local/opt
-    needs a symlink called "protobuf" to /usr/local/Cellar/protobuf/2.5.0
+    /usr/local/bin 
+      protoc (file or symlink)
+      protoc-gen-objc (file or symlink)
+    /usr/local/include
+      needs a symlink called "protobuf" to /usr/local/Cellar/protobuf/2.5.0/include
+    /usr/local/opt
+      needs a symlink called "protobuf" to /usr/local/Cellar/protobuf/2.5.0
 
 
 # Credits
