@@ -8,6 +8,46 @@ This project is based on an implementation of Protocol Buffers from Google.  See
 
 [g-protobuf]: http://code.google.com/p/protobuf/
 
+## Installation
+
+1. Install XCode and XCode command line tools
+2. Install brew
+3. `brew install autogen`
+4. `brew install aclocal`
+5. `brew install automake`
+6. `brew install protobuf`
+6. Download source or clone repository to local machine
+7. `cd` into root directory of project
+8. `./autogen.sh`
+9. `./configure`
+10. `make -B -d & make install`
+
+## Usage
+
+`cd /folder/with/.proto files/ && protoc --objc_out=/my/output/folder *`
+
+## Troubleshooting
+
+Issue installing Protobufs 2.5.0 in Mavericks. Comment out the iosfwd
+  
+  #ifdef __DECCXX
+  // HP C++'s iosfwd doesn't work.
+  #include <iostream>
+  #else
+  #include <sstream>
+  //#include <iosfwd> // comment out this for the sstream
+  #endif
+
+## File locations
+
+  /usr/local/bin 
+    protoc (file or symlink)
+    protoc-gen-objc (file or symlink)
+  /usr/local/include
+    needs a symlink called "protobuf" to /usr/local/Cellar/protobuf/2.5.0/include
+  /usr/local/opt
+    needs a symlink called "protobuf" to /usr/local/Cellar/protobuf/2.5.0
+
 
 # Credits
 
