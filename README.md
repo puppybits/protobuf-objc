@@ -14,7 +14,9 @@ This project is based on an implementation of Protocol Buffers from Google.  See
 * added universal binary
 * compiled with maverick
 
-Add the libProtoBuf.framework to your project. The library will work for iOS Simulator and iOS 7.0 on iPhone 4+. To generate new  protobuf model, create a .proto file, in terminal navigate to the directory and run `protoc --objc_out=./`.
+Add the ProtocolBuffers.framework to your project. The library will work for iOS Simulator and iOS 7.0 on iPhone 4,4s,5,5s.  
+
+To generate protocol buffers model, create a .proto file, in terminal navigate to the `bin/protobuf/2.5.0/bin` directory and run `protoc --objc_out=./ <your_folder_with_.protofiles>`.
 
 ## Installation
 
