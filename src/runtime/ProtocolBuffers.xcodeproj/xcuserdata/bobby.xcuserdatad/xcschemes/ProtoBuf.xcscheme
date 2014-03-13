@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C54556C018C565B400081AED"
-               BuildableName = "ProtoBuf"
-               BlueprintName = "ProtoBuf"
+               BuildableName = "ProtoBuf-framework"
+               BlueprintName = "ProtoBuf-framework"
                ReferencedContainer = "container:ProtocolBuffers.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
