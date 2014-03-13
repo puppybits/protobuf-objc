@@ -33,3 +33,8 @@ Build/
 *.perspectivev3
 *.mode1v3
 *.mode2v3
+*.xcuserdata
+*.xcuserdatad
+xcshareddata
+xcshareddata
+*.xccheckout

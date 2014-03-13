@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.authors      = { "Bobby Schulz" => "bobby@cueup.com", "Aaron Sarazan" => "aaron@levelmoney.com" }
   s.source       = { :git => "https://github.com/asarazan/protobuf-objc.git", :tag => "1.0.0" }
   s.platform     = :ios, '6.0'
-  s.source_files = "**/*"
+  s.source_files = "src/runtime/**"
+  s.resources    = "src/compiler/**", "autogen.sh", "configure.ac", "Makefile.am"
   s.requires_arc = false
 end
