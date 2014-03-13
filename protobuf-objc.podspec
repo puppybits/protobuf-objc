@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source_files = "src/runtime/Classes/**/*"
   s.preserve_paths= "src/compiler", "autogen.sh", "configure.ac", "Makefile.am"
   s.requires_arc = false
+  s.header_dir   = "src/runtime/Classes/ProtocolBuffers"
 end
