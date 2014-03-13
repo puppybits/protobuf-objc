@@ -8,6 +8,10 @@ This project is based on an implementation of Protocol Buffers from Google.  See
 
 [g-protobuf]: http://code.google.com/p/protobuf/
 
+## Cocoa Pods Support
+
+In testing for Cocoa Pods. It's not been submitted to the central repo yet.
+
 ## Plug 'n Play
 
 * added pre-compiled binaries for protoc and protoc-gen-obj
