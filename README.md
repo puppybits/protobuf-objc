@@ -16,6 +16,8 @@ In testing for Cocoa Pods. It's not been submitted to the central repo yet.
 
 * added pre-compiled binaries for protoc and protoc-gen-obj
 * added universal binary
+* added ARC support for generated models
+* added NSCoding and NSCopying to store directly to disk or keychain
 * compiled with maverick
 
 Add the ProtocolBuffers.framework to your project. The library will work for iOS Simulator and iOS 7.0 on iPhone 4,4s,5,5s.  

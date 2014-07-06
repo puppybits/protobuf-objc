@@ -82,13 +82,13 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 
 
   void MessageFieldGenerator::GeneratePropertyHeader(io::Printer* printer) const {
-    printer->Print(variables_, "@property (readonly, retain)$storage_attribute$ $storage_type$ $name$;\n");
+    printer->Print(variables_, "@property (readonly, strong)$storage_attribute$ $storage_type$ $name$;\n");
   }
 
 
   void MessageFieldGenerator::GenerateExtensionSource(io::Printer* printer) const {
     printer->Print(variables_,
-      "@property (retain)$storage_attribute$ $storage_type$ $name$;\n");
+      "@property (strong)$storage_attribute$ $storage_type$ $name$;\n");
   }
 
 
@@ -290,13 +290,13 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 
 
   void RepeatedMessageFieldGenerator::GeneratePropertyHeader(io::Printer* printer) const {
-    printer->Print(variables_, "@property (readonly, retain) PBArray * $name$;\n");
+    printer->Print(variables_, "@property (readonly, strong) PBArray * $name$;\n");
   }
 
 
   void RepeatedMessageFieldGenerator::GenerateExtensionSource(io::Printer* printer) const {
     printer->Print(variables_,
-      "@property (retain) PBAppendableArray * $list_name$;\n");
+      "@property (strong) PBAppendableArray * $list_name$;\n");
   }
 
 
@@ -396,7 +396,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     printer->Print(variables_,
       "if (other.$list_name$.count > 0) {\n"
       "  if (result.$list_name$ == nil) {\n"
-      "    result.$list_name$ = [[other.$list_name$ copyWithZone:[other.$list_name$ zone]] autorelease];\n"
+      "    result.$list_name$ = other.$list_name$.copy;\n"
       "  } else {\n"
       "    [result.$list_name$ appendArray:other.$list_name$];\n"
       "  }\n"
