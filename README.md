@@ -8,7 +8,7 @@ The current implemenation uses an Objective-C port of Google's spec. In the futu
 
 Swift is supported as well with this libary via the native compability with Objective-C. [Apple Swift/Object-C Docs][appl-swift]
 
-[appl-swift] :https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-XID_75
+[appl-swift]: https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-XID_75
 
 This project is based on an implementation of Protocol Buffers from Google.  See the
 [Google protobuf project][g-protobuf] for more information.
