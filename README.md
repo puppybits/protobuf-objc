@@ -1,12 +1,27 @@
 # Protocol Buffers, Objective C
 
-An implementation of Protocol Buffers in Objective C.
+An implementation of Protocol Buffers for Objective C and Swift.
 
-Protocol Buffers are a way of encoding structured data in an efficient yet extensible format.
+Protocol Buffers very compact data format for transporting over the internet. This compatible over REST and socket servers. They are very flexible for server end points that change frequently without breaking the client. Also the .proto files are a great way to document the server endpoints request and response with minimal work and auto generate serialization/deserialization on the client and the server. 
+
+The current implemenation uses an Objective-C port of Google's spec. In the future this will move to be a wrapper around the official C++ implementation for better performance while maintaining Swift compatibility.
+
+Swift is supported as well with this libary via the native compability with Objective-C. [Apple Swift/Object-C Docs][appl-swift]
+
+[appl-swift] :https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-XID_75
+
 This project is based on an implementation of Protocol Buffers from Google.  See the
 [Google protobuf project][g-protobuf] for more information.
 
-[g-protobuf]: http://code.google.com/p/protobuf/
+[g-protobuf]: https://developers.google.com/protocol-buffers
+
+## Quick Start
+
+1. Copy your own .proto file (or the included sample.proto file) into `bin/protobuf/2.5.0/bin`
+2. run `./protoc --objc_out=./ *.proto`
+3. copy the protocol buffer framework at `bin/Fat/ProtocolBuffers.framework` and the generated code to your project
+4. Build your project in XCode
+
 
 ## Cocoa Pods Support
 
@@ -24,7 +39,7 @@ Add the ProtocolBuffers.framework to your project. The library will work for iOS
 
 To generate protocol buffers model, create a .proto file, in terminal navigate to the `bin/protobuf/2.5.0/bin` directory and run `protoc --objc_out=./ <your_folder_with_.protofiles>`.
 
-## Installation
+## Full Installation
 
 1. Install XCode and XCode command line tools
 2. Install brew
