@@ -19,13 +19,10 @@ ltmain.sh
 missing
 m4
 stamp-h1
-
 # Targets
 src/compiler/protoc-gen-objc
-
 # Mac stuff
 .DS_Store
-
 # Xcode stuff
 Build/
 *.pbxuser
@@ -36,3 +33,4 @@ Build/
 *.xcuserdata
 *.xcuserdatad
 *.xccheckout
+compile

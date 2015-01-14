@@ -252,12 +252,12 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     if (descriptor_->extension_range_count() > 0) {
       printer->Print(
         "@interface $classname$ : PBExtendableMessage {\n"
-        "@protected\n",
+        "@private\n",
         "classname", ClassName(descriptor_));
     } else {
       printer->Print(
         "@interface $classname$ : PBGeneratedMessage <NSCopying, NSCoding> {\n"
-        "@protected\n",
+        "@private\n",
         "classname", ClassName(descriptor_));
     }
 

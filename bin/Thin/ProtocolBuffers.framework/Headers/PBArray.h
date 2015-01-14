@@ -56,6 +56,7 @@ typedef enum _PBArrayValueType
 - (Float32)floatAtIndex:(NSUInteger)index;
 - (Float64)doubleAtIndex:(NSUInteger)index;
 - (BOOL)isEqualToArray:(PBArray *)array;
+- (id)objectAtIndexedSubscript:(NSUInteger)idx;
 
 @property (nonatomic,assign,readonly) PBArrayValueType valueType;
 @property (nonatomic,assign,readonly) const void * data;
@@ -95,5 +96,8 @@ typedef enum _PBArrayValueType
 
 - (void)appendArray:(PBArray *)array;
 - (void)appendValues:(const void *)values count:(NSUInteger)count;
+
+// this only appends on to the end
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;
 
 @end

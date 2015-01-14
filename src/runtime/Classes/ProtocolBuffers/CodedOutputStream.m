@@ -55,7 +55,9 @@ const int32_t DEFAULT_BUFFER_SIZE = 4 * 1024;
 
 
 + (PBCodedOutputStream*)streamWithData:(NSMutableData*)data {
-	return [[[PBCodedOutputStream alloc] initWithOutputStream:nil data:data] autorelease];
+    NSOutputStream *stream = [NSOutputStream outputStreamToMemory];
+    [stream open];
+	return [[[PBCodedOutputStream alloc] initWithOutputStream:stream data:data] autorelease];
 }
 
 

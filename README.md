@@ -15,13 +15,21 @@ This project is based on an implementation of Protocol Buffers from Google.  See
 
 [g-protobuf]: https://developers.google.com/protocol-buffers
 
-## Quick Start
+## Generating Protocol Buffer code
 
-1. Copy your own .proto file (or the included sample.proto file) into `bin/protobuf/2.5.0/bin`
-2. run `./protoc --objc_out=./ *.proto`
-3. copy the protocol buffer framework at `bin/Fat/ProtocolBuffers.framework` and the generated code to your project
-4. Build your project in XCode
 
+1. Copy the protocol buffer framework at `bin/Fat/ProtocolBuffers.framework` to your project
+2. Add your .proto files (but don't include them in the compiled source). [See Language syntax][g-proto] 
+3. Optionally add a Build Phase script to regenerate pb.h/pb.m files when releasing
+
+	if [ $CONFIGURATION == Release ]; then
+	    pushd ${PROJECT_DIR}/protos/
+		/usr/local/bin/protoc --plugin=/usr/local/bin/protoc-gen-objc *.proto --objc_out=../src
+	fi
+4. Include all the .pb.m files to your project to be compiled
+5. Build your project in Xcode
+
+[g-proto]: https://developers.google.com/protocol-buffers/docs/proto
 
 ## Cocoa Pods Support
 
@@ -33,25 +41,28 @@ In testing for Cocoa Pods. It's not been submitted to the central repo yet.
 * added universal binary
 * added ARC support for generated models
 * added NSCoding and NSCopying to store directly to disk or keychain
-* compiled with maverick
+* compiled with Maverick and works with Yosemite
 
 Add the ProtocolBuffers.framework to your project. The library will work for iOS Simulator and iOS 7.0 on iPhone 4,4s,5,5s.  
 
 To generate protocol buffers model, create a .proto file, in terminal navigate to the `bin/protobuf/2.5.0/bin` directory and run `protoc --objc_out=./ <your_folder_with_.protofiles>`.
 
+
+
 ## Full Installation
 
 1. Install XCode and XCode command line tools
-2. Install brew
-3. `brew install autogen`
-4. `brew install aclocal`
-5. `brew install automake`
-6. `brew install protobuf`
-6. Download source or clone repository to local machine
-7. `cd` into root directory of project
-8. `./autogen.sh`
-9. `./configure`
-10. `make -B -d & make install`
+2. Install brew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+3. Install Autogen - `brew install autogen`
+5. Install Automake - `brew install automake`
+6. Install Google Protocol Buffers Compiler - `brew install homebrew/versions/protobuf250`
+7. Download ObjC Protocol Buffer Code Generation & Framework - `https://github.com/puppybits/protobuf-objc.git`
+8. Either copy the precompiled objc code generation plugin for protocol buffers - `cp ./bin/protoc-gen-objc /usr/local/bin`
+7. Or build it
+
+	./autogen.sh
+	./configure CXXFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib
+	make install
 
 ## Usage
 
